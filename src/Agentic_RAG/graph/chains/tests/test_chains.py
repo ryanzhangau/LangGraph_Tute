@@ -5,11 +5,8 @@ from Agentic_RAG.ingestion import chroma_retriever
 
 
 def test_retrieve_grader_answer_yes() -> None:
-    chroma_retriever.vectorstore.add_documents([
-        Document(page_content="This is mock document one text content."),
-        Document(page_content="This is mock document two text content.")
-    ])
-    query = "mock"
+
+    query = "agent memory"
     docs = chroma_retriever.invoke(query)
     doc_text = docs[0].page_content
 
@@ -23,10 +20,7 @@ def test_retrieve_grader_answer_yes() -> None:
 
 
 def test_retrieve_grader_answer_no() -> None:
-    chroma_retriever.vectorstore.add_documents([
-        Document(page_content="This is mock document one text content."),
-        Document(page_content="This is mock document two text content.")
-    ])
+
     query = "Other questions"
     docs = chroma_retriever.invoke(query)
     doc_text = docs[0].page_content
