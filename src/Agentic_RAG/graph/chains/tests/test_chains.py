@@ -1,6 +1,6 @@
 from langchain_core.documents import Document
 
-from Agentic_RAG.graph.chains.retrieval_grade import GradeDocuments, grade_chain
+from Agentic_RAG.graph.chains.retrieval_grader import GradeDocuments, grade_chain
 from Agentic_RAG.ingestion import chroma_retriever
 
 
