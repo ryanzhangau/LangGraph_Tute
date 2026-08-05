@@ -29,7 +29,7 @@ docs_spliter = text_spliter.split_documents(docs_list)
 #     persist_directory="./.chroma"
 # )
 
-retriever = Chroma(
+chroma_retriever = Chroma(
     collection_name="rag-chroma",
     persist_directory="./.chroma",
     embedding_function=OllamaEmbeddings(model="qwen3-embedding:8b")
