@@ -1,12 +1,12 @@
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_ollama import ChatOllama
 from pydantic import BaseModel, Field
 
 load_dotenv()
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-3.5-flash",
+llm = ChatOllama(
+    model="llama3.2:latest",
     temperature=0
 )
 
