@@ -15,7 +15,7 @@ def grade_document(state: GraphState) -> Dict[str, Any]:
          state (dict) -- Filtered out irrelevant documents and update web_search state
     """
     documents = state["documents"]
-
+    web_search = False
     filtered_documents = []
 
     for document in documents:
@@ -26,9 +26,12 @@ def grade_document(state: GraphState) -> Dict[str, Any]:
 
         if score.binary_score == "yes":
             filtered_documents.append(document)
+        else:
+            web_search = True
+            continue
 
     return {
         "documents": filtered_documents,
         "question": state["question"],
-        "web_search": len(filtered_documents) != len(documents)
+        "web_search": web_search
     }
